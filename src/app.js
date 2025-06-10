@@ -1,11 +1,18 @@
-import "bootstrap";
-import "./style.css";
+let who = ['El perro', 'Mi abuela', 'El cartero', 'Mi pájaro'];
+let action = ['se comió', 'orinó sobre', 'aplastó', 'rompió'];
+let what = ['mi tarea', 'mi teléfono', 'el carro'];
+let when = ['antes de la clase', 'cuando estaba durmiendo', 'mientras hacía ejercicio', 'durante mi almuerzo', 'mientras rezaba'];
 
+function getRandomElement(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+function generateExcuse() {
+
+  return `${getRandomElement(who)} ${getRandomElement(action)} ${getRandomElement(what)} ${getRandomElement(when)}.`;
+}
+
 
 window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
+  document.getElementById('excuse').innerHTML = generateExcuse();
 };
